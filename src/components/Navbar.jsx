@@ -20,16 +20,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='w-full h-[50px] z-20  top-0 items-center flex justify-center fixed'>
+    <nav className='w-full py-[2vh] z-20  top-0 items-center flex justify-center fixed'>
       {/* Desktop menu */}
-      <ul className='hidden sm:flex max-w-[620px] w-full justify-between'>
+      <ul className='hidden sm:flex max-w-[30%]  w-full justify-between'>
         {nav.map((item) => (
           <li
             key={item}
             onClick={() => setActive(item)}
             className={`text-lg ${
               active === item ? "text-app_yellow" : "text-app_white"
-            } cursor-pointer duration-150 hover:opacity-60 hover:text-app_yellow sm:text-xl font-light`}
+            } cursor-pointer duration-150 hover:opacity-60 hover:text-app_yellow sm:text-[1vw] font-light`}
           >
             <a href={`#${item}`}>{item}</a>
           </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
                   key={item}
                   className={`text-lg ${
                     active === item ? "text-app_yellow" : "text-app_white"
-                  } cursor-pointer hover:text-app_yellow sm:text-2xl font-normal mb-8`}
+                  } cursor-pointer hover:text-app_yellow text-[4vw] font-normal mb-8`}
                   onClick={() => {
                     setActive(item);
                     setToggle(false);

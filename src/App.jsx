@@ -7,7 +7,10 @@ import { styles } from "./constants/styles";
 
 function App() {
   return (
-    <div className='' id='app'>
+    <div
+      className='bg-gradient-to-b min-h-screen from-stone-950 via-gray-950 to-app_blue'
+      id='app'
+    >
       <Navbar />
       <Hero />
     </div>

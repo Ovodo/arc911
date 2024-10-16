@@ -9,8 +9,8 @@
 }
 
 #app {
-  background-image: url(/bg.png);
-  height: 400vh;
+  /* background-image: url(/bg.png); */
+  /* height: 400vh; */
 }
 .bord {
   border: 1px solid blanchedalmond;
