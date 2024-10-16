@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+ /* width: 100%; */
+ box-sizing: border-box;
+ font-family: "Raleway", sans-serif;
+}
+
+#app {
+  background-image: url(/bg.png);
+  height: 400vh;
+}
+.bord {
+  border: 1px solid blanchedalmond;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
