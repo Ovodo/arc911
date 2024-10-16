@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import AppButton from "./AppButton";
 
 const Hero = () => {
   // Define animation variants for staggered fade-in effect
@@ -21,15 +22,15 @@ const Hero = () => {
   };
 
   return (
-    <section className='flex bord z-10 flex-col h-screen bottom-[50px] py-[40px] sm:py-[80px] items-center relative'>
+    <section className='flex flex-col  h-screen  items-center relative'>
       <motion.div
-        className='heading h-[50%] flex flex-col justify-center items-center gap-4 sm:gap-8 z-10'
+        className='heading h-[50%]  pb-4 flex flex-col justify-center sm:justify-end items-center gap-4  z-10'
         initial='hidden'
         animate='visible'
         variants={containerVariants}
       >
         <motion.h1
-          className='text-4xl font-bold sm:text-8xl text-app_white'
+          className='text-4xl font-bold sm:text-[84px] leading-normal  text-app_white'
           variants={itemVariants}
           transition={{ duration: 1 }}
         >
@@ -43,15 +44,18 @@ const Hero = () => {
           A creativity and Innovation Studio
         </motion.h6>
         <motion.h6
-          className='text-app_white font-regular mt-8 sm:mt-16 text-sm sm:text-3xl'
+          className='text-app_white font-light mt-8 sm:mt-8 text-sm sm:text-2xl'
           variants={itemVariants}
           transition={{ duration: 2 }}
         >
           Team | Talent | Task outsourcing for the AEC industry
         </motion.h6>
       </motion.div>
+      <div className='absolute top-[60%] left-[15%] sm:left-[10%]'>
+        <AppButton title={"Get Quote"} />
+      </div>
 
-      <div className='hidden sm:flex w-full h-[50%]'>
+      <div className='hidden  sm:flex w-full h-[50%]'>
         <svg
           width='100%'
           height='100%'
@@ -61,8 +65,7 @@ const Hero = () => {
         >
           <motion.path
             d='M0.5 97.3875C213.5 385.477 475.219 388.792 686.5 203.404C875.5 37.5666 1249.5 -129.96 1505 152.971'
-            stroke='white'
-            strokeWidth='.3'
+            stroke='#DFF3E4'
             initial={{
               opacity: 0,
               pathLength: 0,
@@ -71,18 +74,29 @@ const Hero = () => {
             animate={{
               opacity: 1,
               pathLength: 1,
-              strokeWidth: 1,
+              strokeWidth: 0.5,
             }}
             transition={{ delay: 1.5, duration: 3 }}
           />
         </svg>
       </div>
 
-      <div className='sm:hidden flex h-[374.83px]'>
+      <div className='sm:hidden flex h-[500.83px]'>
         <svg width='100%' height='100%' viewBox='0 0 430 376' fill='none'>
-          <path
+          <motion.path
             d='M0 47.2642C113.539 163.489 66.3776 437.467 179 362.676C279.746 295.771 293.807 -92.7027 430 21.4409'
-            stroke='white'
+            stroke='#DFF3E4'
+            initial={{
+              opacity: 0,
+              pathLength: 0,
+              strokeWidth: 0,
+            }}
+            animate={{
+              opacity: 1,
+              pathLength: 1,
+              strokeWidth: 0.5,
+            }}
+            transition={{ delay: 1.5, duration: 3 }}
           />
         </svg>
       </div>

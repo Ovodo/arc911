@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='w-full h-[50px]  top-0 items-center flex justify-center relative'>
+    <nav className='w-full h-[50px] z-20  top-0 items-center flex justify-center fixed'>
       {/* Desktop menu */}
       <ul className='hidden sm:flex max-w-[620px] w-full justify-between'>
         {nav.map((item) => (
@@ -29,7 +29,7 @@ const Navbar = () => {
             onClick={() => setActive(item)}
             className={`text-lg ${
               active === item ? "text-app_yellow" : "text-app_white"
-            } cursor-pointer duration-150 hover:opacity-60 hover:text-app_yellow sm:text-2xl font-medium`}
+            } cursor-pointer duration-150 hover:opacity-60 hover:text-app_yellow sm:text-xl font-light`}
           >
             <a href={`#${item}`}>{item}</a>
           </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
       <AnimatePresence>
         {toggle && (
           <motion.div
-            className='fixed top-0 right-0 h-[80vh] bg-app_blue flex flex-col justify-center items-center sm:hidden z-40'
+            className='fixed top-0 bottom-0 right-0  bg-app_blue flex flex-col justify-center items-center sm:hidden z-40'
             variants={menuVariants}
             initial='hidden'
             animate='visible'
@@ -64,7 +64,7 @@ const Navbar = () => {
                   key={item}
                   className={`text-lg ${
                     active === item ? "text-app_yellow" : "text-app_white"
-                  } cursor-pointer hover:text-app_yellow sm:text-2xl font-medium mb-8`}
+                  } cursor-pointer hover:text-app_yellow sm:text-2xl font-normal mb-8`}
                   onClick={() => {
                     setActive(item);
                     setToggle(false);

@@ -7,7 +7,7 @@ import { styles } from "./constants/styles";
 
 function App() {
   return (
-    <div className='bord' id='app'>
+    <div className='' id='app'>
       <Navbar />
       <Hero />
     </div>
