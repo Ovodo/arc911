@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { IconMenuDeep, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -7,6 +7,7 @@ const nav = ["Home", "About us", "Services", "Contact us"];
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState("Home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Framer Motion animation variants
   const menuVariants = {
@@ -19,10 +20,35 @@ const Navbar = () => {
     exit: { width: 0, opacity: 0, transition: { duration: 0.3 } },
   };
 
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > window.innerHeight) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  // Detect scroll position and toggle 'isScrolled' state
+  useEffect(() => {
+    console.log("hiss", window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
   return (
-    <nav className='w-full py-[2vh] z-20  top-0 items-center flex justify-center fixed'>
+    <nav className='w-full py-[2vh] z-20 px-[5vw]  top-0 items-center flex justify-center fixed'>
       {/* Desktop menu */}
-      <ul className='hidden sm:flex max-w-[30%]  w-full justify-between'>
+      <motion.ul
+        animate={{ right: isScrolled ? "5%" : "36%" }}
+        transition={{ duration: 0.5 }}
+        className={`hidden sm:flex fixed  top-5 max-w-[30%] duration-[4000] ease-out w-full justify-between ${
+          isScrolled ? " bg-app_brown px-[1vw] rounded-md" : ""
+        }`}
+      >
         {nav.map((item) => (
           <li
             key={item}
@@ -34,7 +60,7 @@ const Navbar = () => {
             <a href={`#${item}`}>{item}</a>
           </li>
         ))}
-      </ul>
+      </motion.ul>
 
       {/* Mobile menu toggle button */}
       <button

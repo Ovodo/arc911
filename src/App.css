@@ -8,9 +8,23 @@
  font-family: "Raleway", sans-serif;
 }
 
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  
+  
+}
+#Services {
+  /* scroll-snap-type: y mandatory; */
+  /* background-color: brown; */
+}
+
 #app {
   /* background-image: url(/bg.png); */
-  /* height: 400vh; */
+  /* height: 100vh; */
+  /* color: ; */
+  /* height: max-content; */
+  
 }
 .bord {
   border: 1px solid blanchedalmond;
@@ -21,6 +35,23 @@
   align-items: center;
 }
 
+section {
+  /* border: 1px solid blanchedalmond; */
+  /* margin-bottom: 20vh; */
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+@media screen and (max-width:480px) {
+  section {
+    min-height: 75vh;
+  }
+}
 
 /* 
 @keyframes logo-spin {
@@ -37,4 +68,6 @@
     animation: logo-spin infinite 20s linear;
   }
 } */
+
+
 

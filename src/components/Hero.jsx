@@ -22,9 +22,12 @@ const Hero = () => {
   };
 
   return (
-    <section className='flex flex-col h-max sm:h-screen  items-center relative'>
+    <section
+      id='Home'
+      className='justify-between sm:justify-start py-[5vh] sm:py-0 flex flex-col h-[70vh]  sm:h-screen  items-center relative'
+    >
       <motion.div
-        className='heading h-[343px] sm:h-[50%]  pb-4 flex flex-col justify-center sm:justify-end items-center gap-4  z-10'
+        className='heading mt-[10%] sm:py-[2%]  sm:mt-[0%] h-[343px] sm:h-[50%]  pb-4 flex flex-col justify-center sm:justify-end items-center gap-4  z-10'
         initial='hidden'
         animate='visible'
         variants={containerVariants}
@@ -88,7 +91,7 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className='sm:hidden flex h-[138px] '>
+      <div className='sm:hidden  flex h-[138px] '>
         <svg width='100%' height='100%' viewBox='0 0 430 140' fill='none'>
           <motion.path
             d='M1 84.7228C37.7096 122.169 145.237 185.444 205.239 84.7228C269.5 -23.1498 367.929 -30.6032 429 84.7228'
