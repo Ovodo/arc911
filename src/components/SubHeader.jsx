@@ -11,7 +11,7 @@ const SubHeader = ({ title, side }) => {
         <motion.div
           animate={{ width: ["0%", "60%"], opacity: [0, 100] }}
           transition={{ duration: 1.5 }}
-          className={`h-[0.5px] sm:h-[1px] mt-[0.5%] ${
+          className={`h-[0.5px] animate-pulse sm:h-[1px] mt-[0.5%] ${
             side == "left" ? "self-start" : "self-end"
           } bg-app_yellow `}
         />

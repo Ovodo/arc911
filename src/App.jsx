@@ -14,6 +14,8 @@ import {
   IconMailFilled,
   IconDeviceLaptop,
 } from "@tabler/icons-react";
+import ContactUs from "./components/ContactUs";
+import Team from "./components/Team";
 
 function App() {
   return (
@@ -77,40 +79,10 @@ function App() {
             />
           </div>
         </div>
+        <ContactUs />
+        <Team />
         <section
-          className={`${styles.section} mt-[15vh] sm:mt-[5vh] w-full  flex flex-col items-center`}
-          id='Contact us'
-        >
-          <Header title={"Contact Us"} />
-          <div className='w-full  flex flex-wrap sm:flex-row gap-[5%] mt-[3%] items-center justify-center'>
-            <button className='flex w-max sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
-              <p className='font-semibold text-nowrap my-2 sm:my-0 text-sm sm:text-xl'>
-                Send us a mail
-              </p>
-              <div className='text-2xl text-app_yellow'>
-                <IconMailFilled />
-              </div>
-            </button>
-            <button className='flex w-max sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
-              <p className='font-semibold text-nowrap my-2 sm:my-0 text-sm sm:text-xl'>
-                Book a meeting
-              </p>
-              <div className='text-2xl text-app_yellow'>
-                <IconCalendar />
-              </div>
-            </button>
-            <button className='flex w-max sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
-              <p className='font-semibold text-nowrap my-2 sm:my-0 text-sm sm:text-xl'>
-                Join our studio
-              </p>
-              <div className='text-2xl text-app_yellow'>
-                <IconDeviceLaptop />
-              </div>
-            </button>
-          </div>
-        </section>
-        <section
-          className={`${styles.section}    relative   flex flex-col items-center`}
+          className={`${styles.section}    relative  justify-start pt-[20vh]  flex flex-col items-center`}
           id='Clients'
         >
           <Header title={"COMPANIES THAT TRUST US"} />

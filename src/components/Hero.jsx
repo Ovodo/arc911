@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { inView, motion, useInView } from "framer-motion";
 import AppButton from "./AppButton";
 
 const Hero = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: !true }); // Trigger only once when it enters the view
   // Define animation variants for staggered fade-in effect
   const containerVariants = {
     hidden: { opacity: 0, y: 100 },
@@ -23,6 +25,7 @@ const Hero = () => {
 
   return (
     <section
+      ref={ref}
       id='Home'
       className='justify-between sm:justify-start py-[5vh] sm:py-0 flex flex-col h-[70vh]  sm:h-screen  items-center relative'
     >
@@ -49,14 +52,14 @@ const Hero = () => {
       </motion.div>
       <motion.h6
         className='hidden sm:flex text-app_white absolute bottom-[10%] right-[10%] font-light mt-8 sm:mt-8 text-sm sm:text-[1vw]'
-        variants={itemVariants}
+        animate={isInView ? { opacity: [0, 1] } : { opacity: 0 }}
         transition={{ duration: 2 }}
       >
         Team | Talent | Task outsourcing for the AEC industry
       </motion.h6>
       <motion.h6
         className='text-app_white flex sm:hidden absolute bottom-[10%] right-[10%] font-light  text-xs'
-        variants={itemVariants}
+        animate={isInView ? { opacity: [0, 1] } : { opacity: 0 }}
         transition={{ duration: 2 }}
       >
         Team | Talent | Outsourcing
@@ -77,16 +80,16 @@ const Hero = () => {
             d='M0.5 97.3875C213.5 385.477 475.219 388.792 686.5 203.404C875.5 37.5666 1249.5 -129.96 1505 152.971'
             stroke='#DFF3E4'
             initial={{
-              opacity: 0,
-              pathLength: 0,
+              opacity: isInView ? 0 : 1,
+              pathLength: isInView ? 0 : 1,
               strokeWidth: 0,
             }}
             animate={{
-              opacity: 1,
-              pathLength: 1,
+              opacity: isInView ? 1 : 0,
+              pathLength: isInView ? 1 : 0,
               strokeWidth: 0.5,
             }}
-            transition={{ delay: 1.5, duration: 3 }}
+            transition={{ delay: 1, duration: 2 }}
           />
         </svg>
       </div>

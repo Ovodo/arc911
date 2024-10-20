@@ -1,78 +1,89 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { IconCircleArrowLeft } from "@tabler/icons-react";
 
 const ImageSlider = ({ images }) => {
   const [activeImage, setActiveImage] = useState(0);
+
   const next = () => {
-    if (activeImage == images.length - 1) {
-      setActiveImage(0);
-      return;
-    }
-
-    setActiveImage((prev) => prev + 1);
+    setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
-  const previous = () => {
-    if (activeImage == 0) {
-      setActiveImage(images.length - 1);
-      return;
-    }
 
-    setActiveImage((prev) => prev - 1);
+  const previous = () => {
+    setActiveImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const imageVariants = {
+    enter: { opacity: 0, x: 100, scale: 0.95, filter: "blur(8px)" }, // Initial state for new image
+    center: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }, // Image in center view
+    exit: { opacity: 0, x: -100, scale: 0.95, filter: "blur(8px)" }, // Image exiting
+  };
+
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity;
   };
 
   return (
-    <div className='flex relative items-center justify-around'>
-      <button onClick={previous}>
-        <img
-          src='/icons/arrow.svg'
-          alt='arrow'
-          className='hover:scale-110 duration-100 cursor-pointer active:scale-90'
-        />
+    <div className='flex relative items-center justify-between overflow-hidden'>
+      <button onClick={previous} className='z-10'>
+        <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <AnimatePresence mode='wait'>
-        <motion.img
-          key={activeImage}
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ opacity: 0, x: +100 }}
-          onPanEnd={(event, info) => {
-            if (info.offset.x < -50) {
-              next(); // Swipe left
-            } else if (info.offset.x > 50) {
-              previous(); // Swipe right
-            }
-          }}
-          transition={{ duration: 0.5 }} // Animation speed
-          src={`/images/${images[activeImage]}.jpg`}
-          alt={images[activeImage]}
-          width={520}
-          height={354}
-          className='object-contain h-[354px]'
-          // style={{ objectFit: "cover" }}
-        />
-      </AnimatePresence>
-      <button onClick={next}>
-        <img
-          src='/icons/arrow.svg'
-          alt='arrow'
-          className='rotate-180 hover:scale-110 duration-100 cursor-pointer active:scale-90'
-        />
+      <div className='relative w-full h-[354px] flex justify-center items-center'>
+        <AnimatePresence custom={activeImage}>
+          <motion.img
+            key={activeImage}
+            src={`/images/${images[activeImage]}.jpg`}
+            alt={images[activeImage]}
+            width={520}
+            height={354}
+            className='absolute object-cover text-center leading-[354px] h-[354px] rounded-lg shadow-lg'
+            variants={imageVariants}
+            initial='enter'
+            animate='center'
+            exit='exit'
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.5 },
+              scale: { duration: 0.7 },
+              filter: { duration: 0.5 },
+            }}
+            drag='x'
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(event, info) => {
+              const swipeConfidenceThreshold = 10000;
+              const swipe = swipePower(info.offset.x, info.velocity.x);
+
+              if (swipe < -swipeConfidenceThreshold) {
+                next();
+              } else if (swipe > swipeConfidenceThreshold) {
+                previous();
+              }
+            }}
+          />
+        </AnimatePresence>
+      </div>
+      <button className='rotate-180 z-10' onClick={next}>
+        <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='flex items-center absolute self-center mx-auto -bottom-[7%]'>
-        {Array(images.length)
-          .fill(0)
-          .map((item, index) => {
-            return (
-              <div
-                key={index.toString()}
-                className={` mx-1 ${
-                  activeImage == index
-                    ? "bg-app_white blur-[0px] w-[10px] h-[10px]"
-                    : "bg-app_white/80 w-2 h-2"
-                } rounded-full duration-200 `}
-              />
-            );
-          })}
+      {/* Navigation Dots */}
+      <div className='flex items-center w-full justify-center absolute left-1/2 -translate-x-1/2 -bottom-[7%] z-10'>
+        {images.map((_, index) => (
+          <motion.div
+            key={index}
+            className={`mx-[6px] rounded-full ${
+              activeImage === index
+                ? "bg-app_white w-[10px] h-[10px]"
+                : "bg-app_white/50 w-2 h-2"
+            }`}
+            initial={{ scale: 1 }}
+            animate={{
+              scale: activeImage === index ? 1.4 : 1,
+              opacity: activeImage === index ? 1 : 0.6,
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          />
+        ))}
       </div>
     </div>
   );

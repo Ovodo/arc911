@@ -9,7 +9,7 @@
 }
 
 html{
-  scroll-snap-type: y mandatory;
+  /* scroll-snap-type: y mandatory; */
   scroll-behavior: smooth;
   
   
@@ -46,6 +46,20 @@ section {
   min-height: 100vh;
   scroll-snap-align: start;
 }
+
+@keyframes vibrate {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1.5px, 1.5px); }
+  40% { transform: translate(1.5px, -1.5px); }
+  60% { transform: translate(-1.5px, -1.5px); }
+  80% { transform: translate(1.5px, 1.5px); }
+  100% { transform: translate(0); }
+}
+
+.contact-element:hover {
+  animation: vibrate 0.2s linear ;
+}
+
 
 @media screen and (max-width:480px) {
   section {
