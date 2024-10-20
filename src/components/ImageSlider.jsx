@@ -14,9 +14,9 @@ const ImageSlider = ({ images }) => {
   };
 
   const imageVariants = {
-    enter: { opacity: 0, x: 100, scale: 0.95, filter: "blur(8px)" }, // Initial state for new image
+    enter: { opacity: 0, x: 10, scale: 0.95, filter: "blur(8px)" }, // Initial state for new image
     center: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }, // Image in center view
-    exit: { opacity: 0, x: -100, scale: 0.95, filter: "blur(8px)" }, // Image exiting
+    exit: { opacity: 0, x: -10, scale: 0.95, filter: "blur(8px)" }, // Image exiting
   };
 
   const swipePower = (offset, velocity) => {
@@ -28,7 +28,19 @@ const ImageSlider = ({ images }) => {
       <button onClick={previous} className='z-10 hidden sm:flex'>
         <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='relative w-full h-[354px] flex justify-center items-center'>
+      <div className='relative image-slider pl-[2vw]  overflow-x-scroll  sm:hidden  h-max flex justify-start items-center'>
+        {images.map((item) => {
+          return (
+            <img
+              key={item}
+              src={`/images/${item}.jpg`}
+              alt={images[activeImage]}
+              className='object-cover mr-20  text-center leading-[354px]  h-[400px] rounded-lg shadow-lg'
+            />
+          );
+        })}
+      </div>
+      <div className='relative hidden sm:flex w-full h-[354px] justify-center items-center'>
         <AnimatePresence custom={activeImage}>
           <motion.img
             key={activeImage}
@@ -42,16 +54,16 @@ const ImageSlider = ({ images }) => {
             animate='center'
             exit='exit'
             transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.5 },
-              scale: { duration: 0.7 },
-              filter: { duration: 0.5 },
+              x: { type: "spring", stiffness: 100, damping: 20 },
+              opacity: { duration: 1 },
+              scale: { duration: 1.4 },
+              filter: { duration: 1 },
             }}
             drag='x'
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
+            dragElastic={1.5}
             onDragEnd={(event, info) => {
-              const swipeConfidenceThreshold = 10000;
+              const swipeConfidenceThreshold = 500;
               const swipe = swipePower(info.offset.x, info.velocity.x);
 
               if (swipe < -swipeConfidenceThreshold) {
@@ -67,7 +79,7 @@ const ImageSlider = ({ images }) => {
         <IconCircleArrowLeft stroke={1.5} />
       </button>
       {/* Navigation Dots */}
-      <div className='flex items-center  justify-center absolute left-1/2 -translate-x-1/2 -bottom-[7%] z-10'>
+      <div className='items-center hidden sm:flex justify-center absolute left-1/2 -translate-x-1/2 -bottom-[7%] z-10'>
         {images.map((_, index) => (
           <motion.div
             key={index}

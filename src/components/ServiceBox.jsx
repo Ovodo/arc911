@@ -26,7 +26,7 @@ const ServiceBox = ({ heading, paragraph, side }) => {
       transition={{ duration: 0.8, ease: "easeOut" }} // Smooth easing effect
     >
       <motion.div
-        className='sm:flex-1  border-green-500'
+        className='sm:flex-1 '
         initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Delay to sync with overall animation
