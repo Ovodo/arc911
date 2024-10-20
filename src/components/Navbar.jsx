@@ -45,7 +45,7 @@ const Navbar = () => {
       <motion.ul
         animate={{ right: isScrolled ? "5%" : "36%" }}
         transition={{ duration: 0.5 }}
-        className={`hidden sm:flex fixed  top-5 max-w-[30%] duration-[4000] ease-out w-full justify-between ${
+        className={`hidden sm:flex fixed bord  top-5 max-w-[30%] duration-[4000] ease-out w-full justify-between ${
           isScrolled ? " bg-app_brown px-[1vw] rounded-md" : ""
         }`}
       >

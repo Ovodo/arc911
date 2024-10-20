@@ -20,13 +20,13 @@ const ServiceBox = ({ heading, paragraph, side }) => {
       ref={ref}
       className={`${
         side == "left" && "sm:flex-row-reverse"
-      } flex justify-end gap-[10%] pt-[20%] sm:pt-0 flex-col-reverse mb-[5vh] sm:mb-0 items-center h-[75vh] sm:h-screen sm:flex-row`}
+      } flex px-[2vw] justify-end gap-[10%] overflow-hidden pt-[20%] sm:pt-0 flex-col-reverse mb-[5vh] sm:mb-0 items-center h-[75vh] sm:h-screen sm:flex-row`}
       initial={{ opacity: 0, y: 50 }} // Initial state: off-screen and faded
       animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
       transition={{ duration: 0.8, ease: "easeOut" }} // Smooth easing effect
     >
       <motion.div
-        className='sm:flex-1'
+        className='sm:flex-1  border-green-500'
         initial={{ opacity: 0, x: side === "left" ? -50 : 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} // Delay to sync with overall animation

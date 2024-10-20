@@ -24,8 +24,8 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div className='flex relative items-center justify-between overflow-hidden'>
-      <button onClick={previous} className='z-10'>
+    <div className='flex relative  items-center w-full justify-between '>
+      <button onClick={previous} className='z-10 hidden sm:flex'>
         <IconCircleArrowLeft stroke={1.5} />
       </button>
       <div className='relative w-full h-[354px] flex justify-center items-center'>
@@ -36,7 +36,7 @@ const ImageSlider = ({ images }) => {
             alt={images[activeImage]}
             width={520}
             height={354}
-            className='absolute object-cover text-center leading-[354px] h-[354px] rounded-lg shadow-lg'
+            className='object-cover text-center leading-[354px] h-[354px] rounded-lg shadow-lg'
             variants={imageVariants}
             initial='enter'
             animate='center'
@@ -63,11 +63,11 @@ const ImageSlider = ({ images }) => {
           />
         </AnimatePresence>
       </div>
-      <button className='rotate-180 z-10' onClick={next}>
+      <button className='rotate-180 z-10 hidden sm:flex' onClick={next}>
         <IconCircleArrowLeft stroke={1.5} />
       </button>
       {/* Navigation Dots */}
-      <div className='flex items-center w-full justify-center absolute left-1/2 -translate-x-1/2 -bottom-[7%] z-10'>
+      <div className='flex items-center  justify-center absolute left-1/2 -translate-x-1/2 -bottom-[7%] z-10'>
         {images.map((_, index) => (
           <motion.div
             key={index}
@@ -78,7 +78,7 @@ const ImageSlider = ({ images }) => {
             }`}
             initial={{ scale: 1 }}
             animate={{
-              scale: activeImage === index ? 1.4 : 1,
+              scale: activeImage === index ? 1.2 : 1,
               opacity: activeImage === index ? 1 : 0.6,
             }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}

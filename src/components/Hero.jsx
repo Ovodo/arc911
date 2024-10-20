@@ -89,7 +89,7 @@ const Hero = () => {
               pathLength: isInView ? 1 : 0,
               strokeWidth: 0.5,
             }}
-            transition={{ delay: 1, duration: 2 }}
+            transition={{ delay: 1.5, duration: 3 }}
           />
         </svg>
       </div>

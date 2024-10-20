@@ -3,14 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 * {
- /* width: 100%; */
- box-sizing: border-box;
- font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  /* border: 1px solid blanchedalmond; */
 }
 
 html{
   /* scroll-snap-type: y mandatory; */
+  width: 100%;
   scroll-behavior: smooth;
+
   
   
 }
@@ -66,7 +68,12 @@ section {
     min-height: 75vh;
   }
 }
-
+@media (max-width: 600px) {
+  .image-slider img {
+    width: 100%;
+    height: auto;
+  }
+}
 /* 
 @keyframes logo-spin {
   from {
