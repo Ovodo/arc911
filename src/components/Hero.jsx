@@ -4,7 +4,7 @@ import AppButton from "./AppButton";
 
 const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: !true }); // Trigger only once when it enters the view
+  const isInView = useInView(ref, { once: true }); // Trigger only once when it enters the view
   // Define animation variants for staggered fade-in effect
   const containerVariants = {
     hidden: { opacity: 0, y: 100 },

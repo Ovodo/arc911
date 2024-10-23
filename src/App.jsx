@@ -1,19 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import ServiceBox from "./components/ServiceBox";
-import SubHeader from "./components/SubHeader";
 import { styles } from "./constants/styles";
-import {
-  IconMenuDeep,
-  IconX,
-  IconCalendar,
-  IconMailFilled,
-  IconDeviceLaptop,
-} from "@tabler/icons-react";
 import ContactUs from "./components/ContactUs";
 import Team from "./components/Team";
 
@@ -50,6 +41,7 @@ function App() {
         <div className='mt-[3%] sm:mt-[3%]'>
           <ServiceBox
             side='right'
+            images={["build1", "build2"]}
             heading={"Revit and BIM Services"}
             paragraph={
               "We offer Revit and BIM service for your project, enabling you to have intelligent designs, easier construction processes, faster and more accurate material take-off"
@@ -57,6 +49,7 @@ function App() {
           />
           <ServiceBox
             side='left'
+            images={["house1", "house2", "house3"]}
             heading={"Rendering and Visualization"}
             paragraph={
               "Bring your architectural visions to life with high-quality 2D and 3D renderings, animations, AR/VR. Whether for real estate or construction, we create photorealistic visuals with immersive experiences that help you showcase your projects to clients or investors."
@@ -71,6 +64,7 @@ function App() {
           />
           <ServiceBox
             side='left'
+            images={["int1", "int2", "int3"]}
             heading={"AR / VR"}
             paragraph={
               "Immerse your clients in their future spaces with cutting-edge augmented and virtual reality experiences. Our AR/VR solutions provide interactive simulations that offer a realistic preview of your designs in a virtual environment."
@@ -78,8 +72,8 @@ function App() {
           />
         </div>
       </div>
-      <ContactUs />
       <Team />
+      <ContactUs />
       <section
         className={`${styles.section}    relative  justify-start pt-[20vh]  flex flex-col items-center`}
         id='Clients'

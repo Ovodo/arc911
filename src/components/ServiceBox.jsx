@@ -3,17 +3,9 @@ import { motion, useInView } from "framer-motion";
 import SubHeader from "./SubHeader";
 import ImageSlider from "./ImageSlider";
 
-const images = [
-  "build1",
-  "build2",
-  "build3",
-  "house",
-  // Additional images can be added here
-];
-
-const ServiceBox = ({ heading, paragraph, side }) => {
+const ServiceBox = ({ heading, paragraph, side, images }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: !true, threshold: 0.2 }); // Trigger when 20% of the component is visible
+  const isInView = useInView(ref, { once: true, threshold: 0.2 }); // Trigger when 20% of the component is visible
 
   return (
     <motion.div

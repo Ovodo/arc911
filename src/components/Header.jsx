@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 
 const Header = ({ title }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: !true }); // Trigger only once when it enters the view
+  const isInView = useInView(ref, { once: true }); // Trigger only once when it enters the view
 
   return (
     <div ref={ref} className='w-max h-max'>
