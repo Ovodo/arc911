@@ -22,7 +22,10 @@ const Team = () => {
             City
           </p>
         </div>
-        <img src='/images/ndukwe.png' />
+        <img
+          className='object-contain w-[500px] h-[600px]'
+          src='/images/victor.jpg'
+        />
       </div>
       <div className='flex flex-col gap-12 sm:gap-0 mt-[5vh] sm:mt-[20vh] sm:flex-row-reverse items-center '>
         <div className=' flex sm:w-[65%] flex-col items-center'>
@@ -35,7 +38,10 @@ const Team = () => {
             served on the management of various AEC teams.
           </p>
         </div>
-        <img src='/images/jide.png' />
+        <img
+          className='object-contain w-[500px] h-[600px]'
+          src='/images/jide.jpg'
+        />
       </div>
     </section>
   );

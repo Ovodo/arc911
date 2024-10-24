@@ -49,7 +49,7 @@ function App() {
           />
           <ServiceBox
             side='left'
-            images={["house1", "house2", "house3"]}
+            images={["lounge", "lounge2"]}
             heading={"Rendering and Visualization"}
             paragraph={
               "Bring your architectural visions to life with high-quality 2D and 3D renderings, animations, AR/VR. Whether for real estate or construction, we create photorealistic visuals with immersive experiences that help you showcase your projects to clients or investors."
@@ -57,7 +57,7 @@ function App() {
           />
           <ServiceBox
             side={"right"}
-            images={["house", "house2", "house3"]}
+            images={["build3", "build4", "center"]}
             heading={"CAD and Drafting services"}
             paragraph={
               "You have done the heavy lifting of concept designs. Now you like to create engineering drawings. This is where we come in. We take away the boring task from off your desk while you focus on providing critical details that make your buildings work."
@@ -65,7 +65,7 @@ function App() {
           />
           <ServiceBox
             side='left'
-            images={["int1", "int2", "int3"]}
+            images={["fx1", "fx2", "view"]}
             heading={"AR / VR"}
             paragraph={
               "Immerse your clients in their future spaces with cutting-edge augmented and virtual reality experiences. Our AR/VR solutions provide interactive simulations that offer a realistic preview of your designs in a virtual environment."

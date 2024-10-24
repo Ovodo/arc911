@@ -14,9 +14,9 @@ const ImageSlider = ({ images }) => {
   };
 
   const imageVariants = {
-    enter: { opacity: 0, x: 10, scale: 0.95, filter: "blur(8px)" }, // Initial state for new image
+    enter: { opacity: 0, x: 100, scale: 0.95, filter: "blur(8px)" }, // Initial state for new image
     center: { opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }, // Image in center view
-    exit: { opacity: 0, x: -10, scale: 0.95, filter: "blur(8px)" }, // Image exiting
+    exit: { opacity: 0, x: -100, scale: 0.95, filter: "blur(8px)" }, // Image exiting
   };
 
   const swipePower = (offset, velocity) => {
@@ -25,10 +25,13 @@ const ImageSlider = ({ images }) => {
 
   return (
     <div className='flex relative  items-center w-full justify-between '>
-      <button onClick={previous} className='z-10 hidden sm:flex'>
+      <button
+        onClick={previous}
+        className='z-10 hidden hover:scale-125 duration-200 sm:flex'
+      >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='relative image-slider pl-[2vw]  overflow-x-scroll  sm:hidden  h-max flex justify-start items-center'>
+      <div className='relative image-slider pl-[2vw]  overflow-x-scroll  hidden  h-max  justify-start items-center'>
         {images.map((item) => {
           return (
             <img
@@ -40,30 +43,31 @@ const ImageSlider = ({ images }) => {
           );
         })}
       </div>
-      <div className='relative hidden sm:flex w-full h-[354px] justify-center items-center'>
-        <AnimatePresence custom={activeImage}>
+      <div className='relative flex w-full h-[354px] justify-center items-center'>
+        <AnimatePresence mode='wait'>
           <motion.img
             key={activeImage}
             src={`/images/${images[activeImage]}.jpg`}
             alt={images[activeImage]}
             width={520}
             height={354}
-            className='object-cover text-center leading-[354px] h-[354px] rounded-lg shadow-lg'
+            className='sm:object-cover object-contain sm:w-[520px] w-[350px] text-center leading-[354px] h-[354px] rounded-lg shadow-lg'
             variants={imageVariants}
             initial='enter'
             animate='center'
             exit='exit'
-            transition={{
-              x: { type: "spring", stiffness: 100, damping: 20 },
-              opacity: { duration: 1 },
-              scale: { duration: 1.4 },
-              filter: { duration: 1 },
-            }}
+            transition={{ duration: 0.5 }}
+            // transition={{
+            //   x: { type: "spring", stiffness: 300, damping: 30 },
+            //   opacity: { duration: 0.5 },
+            //   scale: { duration: 0.7 },
+            //   filter: { duration: 0.5 },
+            // }}
             drag='x'
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1.5}
             onDragEnd={(event, info) => {
-              const swipeConfidenceThreshold = 500;
+              const swipeConfidenceThreshold = 10000;
               const swipe = swipePower(info.offset.x, info.velocity.x);
 
               if (swipe < -swipeConfidenceThreshold) {
@@ -75,7 +79,10 @@ const ImageSlider = ({ images }) => {
           />
         </AnimatePresence>
       </div>
-      <button className='rotate-180 z-10 hidden sm:flex' onClick={next}>
+      <button
+        className='rotate-180 z-10 hidden hover:scale-125 duration-200 sm:flex'
+        onClick={next}
+      >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
       {/* Navigation Dots */}
