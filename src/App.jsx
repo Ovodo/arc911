@@ -57,6 +57,7 @@ function App() {
           />
           <ServiceBox
             side={"right"}
+            images={["house", "house2", "house3"]}
             heading={"CAD and Drafting services"}
             paragraph={
               "You have done the heavy lifting of concept designs. Now you like to create engineering drawings. This is where we come in. We take away the boring task from off your desk while you focus on providing critical details that make your buildings work."
