@@ -31,7 +31,7 @@ const ImageSlider = ({ images }) => {
       >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='relative image-slider pl-[2vw]  overflow-x-scroll  hidden  h-max  justify-start items-center'>
+      <div className='relative image-slider pl-[2vw]  overflow-x-scroll flex  sm:hidden  h-max  justify-start items-center'>
         {images.map((item) => {
           return (
             <img
@@ -43,7 +43,7 @@ const ImageSlider = ({ images }) => {
           );
         })}
       </div>
-      <div className='relative flex w-full h-[354px] justify-center items-center'>
+      <div className='relative hidden sm:flex w-full h-[354px] justify-center items-center'>
         <AnimatePresence mode='wait'>
           <motion.img
             key={activeImage}
