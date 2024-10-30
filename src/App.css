@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 * {
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
+   font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto
   /* border: 1px solid blanchedalmond; */
+}
+.rale {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto
 }
 
 html{
   /* scroll-snap-type: y mandatory; */
-  width: 100%;
   scroll-behavior: smooth;
+  width: 100%;
 
   
   
@@ -29,7 +36,7 @@ html{
   
 }
 .bord {
-  border: 1px solid blanchedalmond;
+  border: 1px solid saddlebrown;
 }
 .center {
   display: flex;
@@ -44,10 +51,24 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  scroll-snap-align: start;
+  /* width: 100%; */
+  /* min-height: 100vh; */
+  scroll-snap-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
+
+.scrollbar-hide {
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Required to re-enable scrolling, as overflow hidden removes scroll functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
 
 @keyframes vibrate {
   0% { transform: translate(0); }
@@ -66,6 +87,9 @@ section {
 @media screen and (max-width:480px) {
   section {
     min-height: 75vh;
+     scroll-snap-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
   }
 }
 @media (max-width: 600px) {

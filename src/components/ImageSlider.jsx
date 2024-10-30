@@ -24,14 +24,14 @@ const ImageSlider = ({ images }) => {
   };
 
   return (
-    <div className='flex relative  items-center w-full justify-between '>
+    <div className='flex relative items-center w-full justify-between '>
       <button
         onClick={previous}
         className='z-10 hidden hover:scale-125 duration-200 sm:flex'
       >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='relative image-slider pl-[2vw]  overflow-x-scroll flex  sm:hidden  h-max  justify-start items-center'>
+      <div className='relative image-slider pl-[3vw]  overflow-x-scroll flex  sm:hidden  h-max  justify-start items-center'>
         {images.map((item) => {
           return (
             <img
