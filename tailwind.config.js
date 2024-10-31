@@ -8,6 +8,7 @@ export default {
         app_yellow: "#F6AE2D",
         app_brown: "#423B0B",
         app_blue: "#01253D",
+        app_milk: "#dbcdc6",
       },
       screens: {
         sm: "420px",

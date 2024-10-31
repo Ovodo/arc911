@@ -14,7 +14,7 @@ function App() {
     <>
       <Navbar />
       <div
-        className='relative w-full flex flex-col items-center text-app_white bg-gradient-to-b  min-h-screen from-stone-950 to-gray-800 via-app_blue'
+        className='relative w-full flex flex-col items-center text-app_white bg-gradient-to-b  min-h-screen   from-stone-900 via-stone-850 to-stone-900 '
         id='app'
       >
         <Hero />
@@ -22,11 +22,11 @@ function App() {
         <Services />
         <Team />
         <ContactUs />
-        <section
-          className={`px-10 h-[50vh] sm:h-screen relative  justify-center w-full py-10  flex flex-col items-center`}
+        <div
+          className={`px-10 h-[50vh] bg-gradient-to-b from-stone-900 via-app_milk to-stone-900 sm:h-screen relative  justify-center w-full py-10  flex flex-col items-center`}
           id='Clients'
         >
-          <Header title={"COMPANIES THAT TRUST US"} />
+          <Header dark={true} title={"COMPANIES THAT TRUST US"} />
           <div className='mt-[4%] sm:mt-[7%] w-full flex justify-center items-center gap-[4%] sm:gap-[10%]'>
             {["invictus", "landmark", "nedcom", "offshore"].map((item) => {
               return (
@@ -40,7 +40,7 @@ function App() {
             })}
           </div>
           <Footer />
-        </section>
+        </div>
       </div>
     </>
   );

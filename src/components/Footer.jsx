@@ -10,7 +10,9 @@ const Footer = () => {
       </div>
       <div className='text-app_white gap-1 sm:gap-2 flex items-center'>
         <p className='text-[10px] sm:text-xs'>Powered By</p>
-        <img src='/icons/tricode.svg' className='w-[24px] h-[24px]' />
+        <div className='bg-stone-900 rounded-full'>
+          <img src='/icons/tricode.svg' className='w-[24px] h-[24px]' />
+        </div>
       </div>
     </div>
   );

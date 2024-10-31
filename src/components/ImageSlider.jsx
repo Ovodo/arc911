@@ -31,7 +31,7 @@ const ImageSlider = ({ images }) => {
       >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
-      <div className='relative image-slider pl-[3vw]  overflow-x-scroll flex  sm:hidden  h-max  justify-start items-center'>
+      <div className='relative image-slider pl-[10vw]  overflow-x-scroll flex  sm:hidden  h-max  justify-start items-center'>
         {images.map((item) => {
           return (
             <img

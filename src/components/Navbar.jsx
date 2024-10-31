@@ -40,10 +40,10 @@ const Navbar = () => {
   }, [handleScroll]);
 
   return (
-    <nav className='w-full py-[2vh] px-5 sm:px-10 fixed  top-0 items-center flex justify-between z-50 bg-transparent h-[8vh] sm:h-[12vh]'>
+    <nav className='w-full py-[2vh] px-5 fixed top-0  sm:px-10 items-center flex justify-between z-50 bg-stone-900  h-[8vh] sm:h-[12vh]'>
       <motion.h1
         className={` font-bold ${
-          isScrolled ? "opacity-0 " : "bg-transparent"
+          isScrolled ? "pacity-0 " : "bg-transparent"
         }  text-[2.5vw] sm:text-[2vw] z-50 rale  text-app_white`}
       >
         Arc 911
@@ -53,7 +53,7 @@ const Navbar = () => {
         animate={{ right: isScrolled ? "5%" : "36%" }}
         transition={{ duration: 0.5 }}
         className={`hidden sm:flex max-w-[30%] px-[1vw] duration-[4000] ease-out w-full justify-between ${
-          isScrolled ? " bg-app_brown rounded-md" : ""
+          isScrolled ? " bg-app_brow rounded-md" : ""
         }`}
       >
         {nav.map((item) => (
@@ -85,7 +85,7 @@ const Navbar = () => {
       <AnimatePresence>
         {toggle && (
           <motion.div
-            className='fixed top-0 bottom-0 right-0  bg-stone-950 flex flex-col justify-center items-center sm:hidden z-40'
+            className='fixed top-0 bottom-0 right-0  bg-stone-900 flex flex-col justify-center items-center sm:hidden z-40'
             variants={menuVariants}
             initial='hidden'
             animate='visible'

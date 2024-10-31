@@ -4,7 +4,7 @@ import Header from "./Header";
 const AboutUs = () => {
   return (
     <section
-      className={`flex flex-col justify-center mt-0 bg-app_white/90  items-center border-y-2 border- border-opacity-20 border-x-app_yellow border-app_brown bg-opacity- px-5 sm:px-10 h-[40vh] sm:h-[92vh]`}
+      className={`flex flex-col justify-center mt-0 bg-gradient-to-b from-stone-900 via-app_milk/90 to-stone-900  items-center border-y-2 border- border-opacity-20 border-x-app_yellow border-app_brown bg-opacity- px-5 sm:px-10 h-[40vh] sm:h-[92vh]`}
       id='About us'
     >
       {/* <div className='self-center'>
@@ -17,7 +17,7 @@ const AboutUs = () => {
       >
         Arc 911
       </h1> */}
-      <p className=' text-[4vw] text-center text-app_blue  sm:text-[3vw] leading-normal'>
+      <p className=' text-[4vw] text-center border-y border-stone-800/50 py-28  text-app_blue  sm:text-[3vw] leading-normal'>
         We are a design and innovation studio. We believe that creativity should
         be ubiquitous, and so, we provide cheap and quick design services for
         individuals, architecture, construction, interior design, and real

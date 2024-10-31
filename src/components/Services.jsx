@@ -41,13 +41,13 @@ const Services = () => {
       style={{
         scrollSnapAlign: "center",
       }}
-      className='flex w-full  border-y border-app_white/10 py-5 sm:py-10 bg-app_yellow bg-opacity-5 relative flex-col mt-0 items-center'
+      className='flex w-full  sm:h-screen border-y border-app_white/10 py-5 sm:py-10 bg-app_yello bg-opacity-5 relative flex-col mt-0 items-center'
       id='Services'
     >
-      {/* <Header title={"Services"} /> */}
+      <Header title={"Services"} />
       <div
         ref={scrollContainerRef}
-        className='w-full  sm:overflow-x-auto scrollbar-hide overflow-y-visible sm:overflow-y-hidden h-full items-center flex  scroll-smooth'
+        className='w-full  sm:overflow-x-auto mt-10 sm:mt-0 scrollbar-hide  overflow-y-visible sm:overflow-y-hidden h-full items-center flex  scroll-smooth'
       >
         <div className='flex sm:h-[75vh] h-full flex-col sm:flex-row'>
           {[
