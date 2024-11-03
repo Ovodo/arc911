@@ -10,9 +10,12 @@ const ServiceBox = ({ heading, paragraph, side, images }) => {
   return (
     <motion.div
       ref={ref}
+      style={{
+        scrollSnapAlign: "center",
+      }}
       className={`${
         side == "left" && "sm:flex-row-reverse"
-      } flex px-5 sm:px-10 w-[99vw] sm:w-[100vw] border-r border-dotted border-app_white flex-col-reverse justify-end gap-20 items-center h-full  mb-20 sm:mb-0 sm:h-[75vh] sm:flex-row`}
+      } flex px-5 sm:px-20 w-full pb-10 sm:border-b-0 gap-10 sm:gap-0 border-b border-app_milk/40 sm:w-[85vw] sm:border-r border-dotted border-app_white flex-col-reverse justify-end  items-center h-full  mb-20 sm:mb-0 sm:h-[75vh] sm:flex-row`}
       initial={{ opacity: 0, y: 0 }} // Initial state: off-screen and faded
       animate={isInView ? { opacity: 1, y: 0 } : {}} // Animate when in view
       transition={{ duration: 0.8, ease: "easeOut" }} // Smooth easing effect

@@ -24,7 +24,7 @@ const itemVariants = {
 const heroTextStyle =
   "hover:text-app_white duration-500 text-app_brown hover:bg-transparent bg-app_white rounded-lg sm:text-app_white sm:hover:text-app_brown sm:bg-transparent sm:hover:bg-app_white px-8 ml-2 py-5 font-semibold cursor-pointer text-[3vw] sm:text-[2vw]";
 const baseStyle =
-  "text-app_brown bg-app_white sm:bg-transparent sm:text-app_white rounded-lg px-6 ml-4 py-3 font-semibold cursor-pointer text-[3vw] sm:text-[2vw]";
+  "bg-transparent text-app_white rounded-lg px-3 sm:px-6 ml-1 sm:ml-4 py-3 font-semibold cursor-pointer text-[28px] leading-normal  sm:text-[2vw]";
 const hoverEffect = "hover:text-app_brown hover:bg-app_white duration-500";
 const transitionStyle = "duration-500";
 const Hero = () => {
@@ -38,37 +38,47 @@ const Hero = () => {
         className='justify-center w-full sm:justify-start py-[5vh] sm:py-0 flex mt-[8vh] sm:mt-[12vh] flex-col h-[78vh] sm:h-[76vh]   items-center relative'
       >
         <motion.div
-          className='absolute left-0 z-20 w-[50%] sm:w-[35%] h-full gap-8 flex flex-col justify-center'
+          className='absolute left-0  z-20 w-max sm:w-[35%] h-full sm:gap-8 flex flex-col justify-center'
           initial='hidden'
           animate='visible'
           variants={containerVariants}
         >
-          <motion.h6
+          <motion.a
+            href='#team'
             className={`${baseStyle} ${hover}`}
             variants={itemVariants}
             style={{ width: "max-content" }}
           >
             Team
-          </motion.h6>
-          <motion.h6
+          </motion.a>
+          <motion.a
+            href='#Contact us'
             className={`${baseStyle} ${hover}`}
             variants={itemVariants}
             style={{ width: "max-content" }}
           >
             Talents
-          </motion.h6>
-          <motion.h6
-            className={`${baseStyle} ${hover}`}
+          </motion.a>
+          <motion.a
+            href='#Contact us'
+            className={`${baseStyle} hidden sm:flex ${hover}`}
             variants={itemVariants}
           >
             Task outsourcing for the AEC industry
-          </motion.h6>
+          </motion.a>
+          <motion.a
+            href='#Contact us'
+            className={`${baseStyle} ${hover} whitespace-nowrap sm:hidden`}
+            variants={itemVariants}
+          >
+            Task outsourcing
+          </motion.a>
           <motion.div
             variants={itemVariants}
             onAnimationComplete={() => {
               setHover(hoverEffect);
             }}
-            className='ml-5 sm:ml-10 relative top-14'
+            className='absolute bottom-4 left-2 sm:left-5'
           >
             <AppButton title={"Get Quote"} />
           </motion.div>
@@ -82,7 +92,7 @@ const Hero = () => {
 
       <Marquee className=''>
         <h6 className='text-app_white font-medium flex items-center h-[8vh] sm:h-[12vh] capitalize text-[4vw] sm:text-[1.5vw]'>
-          A creativity and Innovation Studio
+          A creative and Innovtive Studio
         </h6>
       </Marquee>
     </div>

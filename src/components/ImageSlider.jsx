@@ -27,7 +27,7 @@ const ImageSlider = ({ images }) => {
     <div className='flex relative items-center w-full justify-between '>
       <button
         onClick={previous}
-        className='z-10 hidden hover:scale-125 duration-200 sm:flex'
+        className='z-10 hidden hover:scale-125 absolute top-1/2 -translate-y-1/2 -left-4 duration-200 sm:flex'
       >
         <IconCircleArrowLeft stroke={1.5} />
       </button>
@@ -80,7 +80,7 @@ const ImageSlider = ({ images }) => {
         </AnimatePresence>
       </div>
       <button
-        className='rotate-180 z-10 hidden hover:scale-125 duration-200 sm:flex'
+        className='rotate-180 z-10 hidden hover:scale-125 absolute top-1/2 -translate-y-1/2 -right-4 duration-200 sm:flex'
         onClick={next}
       >
         <IconCircleArrowLeft stroke={1.5} />

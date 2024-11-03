@@ -1,5 +1,4 @@
 import React from "react";
-import { styles } from "../constants/styles";
 import Header from "./Header";
 import {
   IconCalendar,

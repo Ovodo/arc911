@@ -16,15 +16,12 @@
 }
 
 html{
-  /* scroll-snap-type: y mandatory; */
+  /* scroll-snap-type:   y mandatory; */
   scroll-behavior: smooth;
   width: 100%;
-
-  
-  
 }
-#Services {
-  /* scroll-snap-type: y mandatory; */
+.services {
+  scroll-snap-type: x mandatory;
   /* background-color: brown; */
 }
 
@@ -55,7 +52,7 @@ section {
   /* min-height: 100vh; */
   scroll-snap-align: center;
   /* margin-top: 80px; */
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .scrollbar-hide {
@@ -89,7 +86,7 @@ section {
     min-height: 75vh;
      scroll-snap-align: center;
   /* margin-top: 40px; */
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   }
 }
 @media (max-width: 600px) {

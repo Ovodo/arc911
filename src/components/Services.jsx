@@ -41,15 +41,18 @@ const Services = () => {
       style={{
         scrollSnapAlign: "center",
       }}
-      className='flex w-full  sm:h-screen border-y border-app_white/10 py-5 sm:py-10 bg-app_yello bg-opacity-5 relative flex-col mt-0 items-center'
+      className='flex w-[90%]   sm:h-screen border-t  border-app_white  py-5 sm:py-10 border-opacity-40 bg-app_yello bg-opacity-5 relative flex-col mt-0 items-center'
       id='Services'
     >
-      <Header title={"Services"} />
+      <p className='absolute top-0 left-0  text-[2.5vw] sm:text-[1vw]'>
+        Check out some of our services:-
+      </p>
+      {/* <Header title={"Services"} /> */}
       <div
         ref={scrollContainerRef}
-        className='w-full  sm:overflow-x-auto mt-10 sm:mt-0 scrollbar-hide  overflow-y-visible sm:overflow-y-hidden h-full items-center flex  scroll-smooth'
+        className='w-full services sm:overflow-x-auto mt-10 sm:mt-0 scrollbar-hide  overflow-y-visible sm:overflow-y-hidden h-full items-center flex  scroll-smooth'
       >
-        <div className='flex sm:h-[75vh] h-full flex-col sm:flex-row'>
+        <div className='flex  sm:h-[75vh] h-full flex-col sm:flex-row'>
           {[
             {
               heading: "Revit and BIM Services",

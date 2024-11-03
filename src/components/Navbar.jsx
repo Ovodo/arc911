@@ -44,7 +44,7 @@ const Navbar = () => {
       <motion.h1
         className={` font-bold ${
           isScrolled ? "pacity-0 " : "bg-transparent"
-        }  text-[2.5vw] sm:text-[2vw] z-50 rale  text-app_white`}
+        }  text-[4vw] sm:text-[2vw] z-50 rale  text-app_white`}
       >
         Arc 911
       </motion.h1>
