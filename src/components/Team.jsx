@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { styles } from "../constants/styles";
 import Header from "./Header";
 import SubHeader from "./SubHeader";
+import { motion, useInView } from "framer-motion";
 
 const teamMembers = [
   {
@@ -21,18 +22,30 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: "some" }); // Trigger only once when it enters the view
+
   return (
     <section
+      ref={ref}
       id='team'
-      className='px-10 flex border-t justify-center border-app_milk/40 mx-5 w-full h-full flex-col relative bg-gradient-to- from-stone-900 via-[10%] to-100% via-app_milk to-stone-900 gap-10 sm:gap-20 py-24 sm:h-screen items-center'
+      className='px-10 flex overflow-x-hidden border-t justify-center border-app_milk/40 mx-5 w-full h-full flex-col relative bg-gradient-to- from-stone-900 via-[10%] to-100% via-app_milk to-stone-900 gap-10 sm:gap-20 py-24 sm:h-screen items-center'
     >
       <div className='w-[90vw] border-opacity-100 mx-5 sm:mx-10 h-[70%] my-auto absolute border-x  border-stone-800'></div>
       <Header dark={!true} title='Our Team' />
       <div className='flex flex-col sm:flex-row flex-1 gap-12'>
         {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className={`flex flex-col-reverse justify-end  ${
+          <motion.div
+            key={index.toString()}
+            transition={{
+              duration: 1.4,
+              ease: "easeOut",
+            }}
+            animate={{
+              x: isInView ? 0 : member.reverse ? 800 : -800,
+              opacity: isInView ? 1 : 0,
+            }}
+            className={`flex flex-col-reverse rotate-0 justify-end  ${
               member.reverse ? "" : ""
             } items-center gap-12`}
           >
@@ -49,7 +62,7 @@ const Team = () => {
               src={member.imgSrc}
               alt={member.name}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

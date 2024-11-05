@@ -13,11 +13,11 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, x: 800 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    x: 0,
+    transition: { duration: 1.4, ease: "easeOut" },
   },
 };
 
@@ -25,7 +25,7 @@ const heroTextStyle =
   "hover:text-app_white duration-500 text-app_brown hover:bg-transparent bg-app_white rounded-lg sm:text-app_white sm:hover:text-app_brown sm:bg-transparent sm:hover:bg-app_white px-8 ml-2 py-5 font-semibold cursor-pointer text-[3vw] sm:text-[2vw]";
 const baseStyle =
   "bg-transparent text-app_white rounded-lg px-3 sm:px-6 ml-1 sm:ml-4 py-3 font-semibold cursor-pointer text-[28px] leading-normal  sm:text-[2vw]";
-const hoverEffect = "hover:text-app_brown hover:bg-app_white duration-500";
+const hoverEffect = "hover:text-app_brown  hover:bg-app_white duration-500";
 const transitionStyle = "duration-500";
 const Hero = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -80,7 +80,7 @@ const Hero = () => {
             }}
             className='absolute bottom-4 left-2 sm:left-5'
           >
-            <AppButton title={"Get Quote"} />
+            <AppButton href={"#Contact us"} title={"Get Quote"} />
           </motion.div>
         </motion.div>
 

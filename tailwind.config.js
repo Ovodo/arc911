@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        app_white: "#DFF3E4",
+        app_white: "#dbcdc6",
         app_yellow: "#F6AE2D",
         app_brown: "#423B0B",
         app_blue: "#01253D",
