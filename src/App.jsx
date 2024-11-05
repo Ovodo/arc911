@@ -63,7 +63,7 @@ function App() {
         <Team />
         <ContactUs />
         <div
-          className={`px-10 h-[50vh] bg-gradient-to- from-stone-900 via-app_milk to-stone-900 sm:h-screen relative  justify-center w-full py-10  flex flex-col items-center`}
+          className={`px-10 h-[92vh] bg-gradient-to- from-stone-900 via-app_milk to-stone-900 sm:h-screen relative  justify-center w-full py-10  flex flex-col items-center`}
           id='Clients'
           ref={ref}
           style={{
@@ -75,7 +75,7 @@ function App() {
             variants={containerVariants}
             initial='hidden'
             animate={isInView ? "visible" : "hidden"}
-            className='mt-[4%] sm:mt-[7%] w-full flex justify-center items-center gap-[4%] sm:gap-[10%]'
+            className='mt-[10%] sm:mt-[7%] w-full flex justify-center items-center gap-[4%] sm:gap-[10%]'
           >
             {["invictus", "landmark", "nedcom", "offshore"].map(
               (item, index) => {
