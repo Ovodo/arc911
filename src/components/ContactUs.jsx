@@ -26,7 +26,7 @@ const ContactUs = () => {
         <button className='flex w-max contact-element sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
           <a
             href='mailto:info@arc911.com'
-            className='font-semibold  text-nowrap my-2 sm:my-0 text-sm sm:text-xl'
+            className='font-semibold  text-nowrap whitespace-nowrap my-2 sm:my-0 text-sm sm:text-xl'
           >
             Send us a mail
           </a>
@@ -37,7 +37,7 @@ const ContactUs = () => {
         <button className='flex w-max contact-element sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
           <a
             href='https://calendly.com/d/ckkh-xcr-8tb/30-minute-design-briefing'
-            className='font-semibold  text-nowrap my-2 sm:my-0 text-sm sm:text-xl'
+            className='font-semibold  text-nowrap whitespace-nowrap my-2 sm:my-0 text-sm sm:text-xl'
           >
             Book a meeting
           </a>
@@ -48,7 +48,7 @@ const ContactUs = () => {
         <button className='flex w-max contact-element sm:w-[15%] items-center hover:scale-105 hover:blur-[0.5px] duration-150 active:scale-95 ease-in gap-[6%]'>
           <a
             href='https://forms.gle/BtKC95xzMRbJ8pKC6'
-            className='font-semibold  text-nowrap my-2 sm:my-0 text-sm sm:text-xl'
+            className='font-semibold  text-nowrap whitespace-nowrap my-2 sm:my-0 text-sm sm:text-xl'
           >
             Join our studio
           </a>
