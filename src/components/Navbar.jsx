@@ -72,12 +72,12 @@ const Navbar = () => {
       {/* Mobile menu toggle button */}
       <button
         onClick={() => setToggle(!toggle)}
-        className='flex fixed duration-1000 right-4 top-4 sm:hidden z-50'
+        className='flex  duration-1000 right-4 top-4 sm:hidden z-50'
       >
         {!toggle ? (
-          <IconMenuDeep color='#DFF3E4' size={24} />
+          <IconMenuDeep color='#dbcdc6' size={24} />
         ) : (
-          <IconX color='#DFF3E4' size={24} />
+          <IconX color='#dbcdc6' size={24} />
         )}
       </button>
 
